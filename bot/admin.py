@@ -6,6 +6,7 @@ from .models import FAQ, Info, Profile
 class ProfileAdmin(admin.ModelAdmin):
     list_display = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
     list_display_links = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
+    readonly_fields = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
 
 
 class FAQAdmin(admin.ModelAdmin):
