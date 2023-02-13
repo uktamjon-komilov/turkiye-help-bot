@@ -33,7 +33,7 @@ class InfoAdmin(admin.ModelAdmin):
                 })
             ]
 
-        elif obj.slug == "call_center":
+        elif obj.slug in ["call_center", "required_items"]:
             return [
                 ("Ma'lumotlar", {
                     "fields": ("name", "text"),
