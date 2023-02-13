@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8080
+    volumes:
+      - ./static:/home/user/web/static
+      - ./media:/home/user/web/media
+    ports:
+      - 8080:8080
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+  
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=turkiye_help
+      - POSTGRES_PASSWORD=turkiye_help
+      - POSTGRES_DB=turkiye_help
+
+volumes:
+  postgres_data:
