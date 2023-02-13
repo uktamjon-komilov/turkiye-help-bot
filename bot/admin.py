@@ -24,7 +24,7 @@ class InfoAdmin(admin.ModelAdmin):
         obj: Info | None = None
     ) -> list[tuple[str | None, dict[str, any]]]:  # type: ignore
         if obj is None:
-            return self.get_fieldsets(request=request, obj=obj)
+            return super(InfoAdmin, self).get_fieldsets(request=request, obj=obj)
 
         if obj.slug == "location":
             return [
@@ -40,7 +40,7 @@ class InfoAdmin(admin.ModelAdmin):
                 })
             ]
 
-        return self.get_fieldsets(request=request, obj=obj)
+        return super(InfoAdmin, self).get_fieldsets(request=request, obj=obj)
 
 admin.site.site_title = "Gumanitar yordam"
 admin.site.index_title = "Gumanitar yordam"
