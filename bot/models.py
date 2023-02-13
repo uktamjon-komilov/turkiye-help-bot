@@ -46,7 +46,7 @@ class FAQ(models.Model):
 class Info(models.Model):
     name = models.CharField(max_length=50, verbose_name="Nomi")
     text = models.TextField(verbose_name="Matn")
-    location_url = models.TextField(default=None, verbose_name="Google maps manzili")
+    location_url = models.TextField(default=None, null=True, verbose_name="Google maps manzili")
     longitude = models.FloatField(default=None, null=True)
     latitude = models.FloatField(default=None, null=True)
     slug = models.SlugField(editable=False)
