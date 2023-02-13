@@ -30,10 +30,14 @@ class BotViewSet(
     @method_decorator(csrf_exempt)
     def create(self, request, *args, **kwargs):
         data = request.data
-        print(get_client_ip(request))
         try:
             data_service = TelegramService(data)
             bot_service = BotService(data)
+
+            try:
+                data_service.get_or_create_profile()
+            except Exception:
+                pass
 
             if (data_service.text not in locales.MENU_BUTTONS or
                 data_service.text == locales.START):
