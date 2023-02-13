@@ -12,11 +12,10 @@ DEBUG = bool(int(os.environ.get("DEBUG", default="1")))
 
 ALLOWED_HOSTS = ["*"]
 
-# CSRF_TRUSTED_ORIGINS = [
-#     "http://localhost:8000",
-#     "https://111a-95-214-211-202.eu.ngrok.io",
-#     # "91.108.6.49",
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8080",
+    "https://turkiyebot.codingbond.com/"
+]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
