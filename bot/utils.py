@@ -9,6 +9,9 @@ def get_faq_details() -> str:
     for index, faq in enumerate(faqs):
         output += f"""Savol-{index+1}: <b>{faq.question}</b>\n"""
         output += f"""Javob: <i>-{faq.answer}</i>\n\n"""
+    
+    if len(output) == 0:
+        output = "..."
 
     return output
 
