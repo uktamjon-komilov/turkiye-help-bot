@@ -1,9 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group, User
 
-from .models import FAQ, Info
+from .models import FAQ, Info, Profile
 
 class FAQAdmin(admin.ModelAdmin):
+    list_display = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
+    list_display_links = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
+
+
+class ProfileAdmin(admin.ModelAdmin):
     list_display = ["id", "question"]
     list_display_links = ["id", "question"]
 
@@ -48,5 +53,6 @@ admin.site.index_title = "Gumanitar yordam"
 
 admin.site.register(FAQ, FAQAdmin)
 admin.site.register(Info, InfoAdmin)
+admin.site.register(Profile, ProfileAdmin)
 admin.site.unregister(User)
 admin.site.unregister(Group)
