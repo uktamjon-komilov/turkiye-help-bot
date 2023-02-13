@@ -17,6 +17,8 @@ CSRF_TRUSTED_ORIGINS = [
     "turkiyebot.codingbond.com",
     "http://turkiyebot.codingbond.com",
     "https://turkiyebot.codingbond.com",
+    "http://*.codingbond.com",
+    "https://*.codingbond.com",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
