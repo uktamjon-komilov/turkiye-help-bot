@@ -22,8 +22,11 @@ services:
       - POSTGRES_USER=turkiye_help
       - POSTGRES_PASSWORD=turkiye_help
       - POSTGRES_DB=turkiye_help
+    expose:
+    - "5435" # Publishes 5435 to other containers but NOT to host machine
     ports:
-      - 5435:5432
+      - "5435:5435"
+    command: -p 5435
 
 volumes:
   postgres_data:
