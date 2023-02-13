@@ -11,6 +11,7 @@ class FAQAdmin(admin.ModelAdmin):
 class InfoAdmin(admin.ModelAdmin):
     list_display = ["id", "name"]
     list_display_links = ["id", "name"]
+    readonly_fields = ["name"]
 
     def has_add_permission(self, request) -> bool:
         return False
