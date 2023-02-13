@@ -3,12 +3,12 @@ from django.contrib.auth.models import Group, User
 
 from .models import FAQ, Info, Profile
 
-class FAQAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     list_display = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
     list_display_links = ["id", "first_name", "last_name", "phone", "tg_id", "tg_username"]
 
 
-class ProfileAdmin(admin.ModelAdmin):
+class FAQAdmin(admin.ModelAdmin):
     list_display = ["id", "question"]
     list_display_links = ["id", "question"]
 
