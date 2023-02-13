@@ -14,7 +14,9 @@ ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8080",
-    "https://turkiyebot.codingbond.com/"
+    "turkiyebot.codingbond.com",
+    "http://turkiyebot.codingbond.com",
+    "https://turkiyebot.codingbond.com",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
